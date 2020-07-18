@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 3
+   DailyNicPunch
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let item of data?.articles" (click)="onGoTo(item)">
+    <img [src]="item.urlToImage" />
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-chip outline color="primary">
+          <ion-icon name="today-outline"></ion-icon>
+          <ion-label>{{item.publishedAt| date:'medium'}}</ion-label>
+          <!-- <ion-icon name="close-circle"></ion-icon> -->
+        </ion-chip>
+      </ion-card-subtitle>
+      <ion-card-title>{{item.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.description}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

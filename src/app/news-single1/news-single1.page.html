@@ -1,13 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+<ion-header>
+  <ion-toolbar>
     <ion-title>
-   DailyNicPunch
+     <ion-icon name="arrow-back" routerLink="/tabs/tab2"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card *ngFor="let item of data?.articles" (click)="onGoTo(item)">
+<ion-content>
+  <ion-card>
     <img [src]="item.urlToImage" />
     <ion-card-header>
       <ion-card-subtitle>
