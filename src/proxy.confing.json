@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target":"http://newsapi.org/v2",
+            "secure":false,
+            "logLevel":"debug"
+    }
+}

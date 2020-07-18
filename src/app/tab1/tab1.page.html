@@ -26,7 +26,13 @@
     </ion-card-header>
     <ion-card-content>
       {{item.description}}
+      <br>
+      <ion-chip outline color="success"  (click)="onGoTo(item)">
+        <ion-label>Read More</ion-label>
+      </ion-chip>
     </ion-card-content>
+  
+   
   </ion-card>
  
 </ion-content>
